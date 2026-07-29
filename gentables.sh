@@ -1,9 +1,8 @@
 #!/bin/sh
 
 CC=${CC:=cc}
-CCOPT="-Wall -W -O2"
 
-${CC} gentables.c -o gentables ${CCOPT}
+${CC} gentables.c -o gentables -Wall -W -O2
 ./gentables >tables.c
 ./gentables h >tables.h
 echo Tables generated
