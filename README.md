@@ -1,4 +1,4 @@
-# homebrew-tap
+#  Hping3 for MacOS / homebrew-tap
 
 Homebrew formulae maintained by [@parsa222](https://github.com/parsa222).
 
