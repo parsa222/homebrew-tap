@@ -1,3 +1,45 @@
+# homebrew-tap
+
+Homebrew formulae maintained by [@parsa222](https://github.com/parsa222).
+
+## hping3
+
+```sh
+brew install parsa222/tap/hping3
+```
+
+[hping3](https://github.com/antirez/hping) is a command-line TCP/IP packet
+assembler and analyser by Salvatore Sanfilippo ([@antirez](https://github.com/antirez)).
+
+### Why this tap exists
+
+hping3 was removed from homebrew-core, so `brew install hping3` no longer works.
+
+The previous community tap, `draftbrew/tap/hping`, is also gone
+([DraftBrew/homebrew-tap](https://github.com/DraftBrew/homebrew-tap) is unavailable
+as of 2026-07-28).
+
+The hping.org domain registry changed  and no longer hosts the project. here are the archives:
+
+- website: <https://web.archive.org/web/20170327025302/http://hping.org/>
+- docs: <https://web.archive.org/web/20170521052953/http://wiki.hping.org/94/>
+
+### Notes
+
+Most operations need raw sockets.
+
+Usage examples: [cellularmitosis's gist](https://gist.github.com/cellularmitosis/a18fc81b74a7365c5162ea6493c89640)
+
+hping is GPL-2.0-only, Copyright (C) 1998, 1999 Salvatore Sanfilippo. This tap adds
+packaging only. All credit for hping belongs to [@antirez](https://github.com/antirez).
+
+---
+
+## Original upstream [`README`](https://github.com/antirez/hping/blob/master/README):
+
+
+
+```text
 hping3 README file
 antirez@invece.org
 
@@ -91,3 +133,4 @@ INSTALLATION
 
 have fun,
 antirez
+```
