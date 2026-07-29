@@ -28,10 +28,10 @@ The hping.org domain registry changed  and no longer hosts the project. here are
 
 -  TCL scripting is enabled 
 
-  - homebrew-core built hping3 with --no-tcl. But macOS ships Tcl 8.5 in CommandLineTools.  
-  its is enabled here with `-DUSE_TCL` and `-ltcl`, because hping's 2005 configure only looked for tclsh8.* and libtcl*.so 
+  - homebrew-core built hping3 with --no-tcl. But macOS comes with Tcl 8.5 (install CommandLineTools just in case)   
+  TCL scripting is enabled here with `-DUSE_TCL` and `-ltcl`, because hping's 2005 configure only looked for tclsh8.* and libtcl*.so 
 
-- most operations need raw sockets.
+- most operations need raw sockets 
 
 - Usage examples: [cellularmitosis's gist](https://gist.github.com/cellularmitosis/a18fc81b74a7365c5162ea6493c89640).    
 
