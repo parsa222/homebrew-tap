@@ -28,8 +28,6 @@ class Hping3 < Formula
     system "make"
 
     sbin.install "hping3"
-    sbin.install_symlink "hping3" => "hping"
-    sbin.install_symlink "hping3" => "hping2"
     man8.install "docs/hping3.8"
     doc.install "docs/API.txt", "docs/APD.txt", "docs/HPING2-HOWTO.txt", "docs/SPOOFED_SCAN.txt"
     pkgshare.install "lib"
