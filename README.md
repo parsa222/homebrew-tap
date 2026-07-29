@@ -1,16 +1,24 @@
-#  Hping3 for MacOS / homebrew-tap
-[![tests](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml/badge.svg)](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml)  
+# Hping3 for macOS / Homebrew Tap
+
+[![tests](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml/badge.svg)](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml)
 
 Homebrew formulae maintained by [@parsa222](https://github.com/parsa222).
 
 ## hping3
 
+[hping3](https://github.com/antirez/hping) is a command-line TCP/IP packet assembler and analyzer by Salvatore Sanfilippo ([@antirez](https://github.com/antirez)).
+
+### Prerequisites
+
+Install Homebrew if you haven't already:
+
+https://brew.sh/
+
+### Installation
+
 ```sh
 brew install parsa222/tap/hping3
 ```
-
-[hping3](https://github.com/antirez/hping) is a command-line TCP/IP packet
-assembler and analyser by Salvatore Sanfilippo ([@antirez](https://github.com/antirez)).
 
 ### Why this tap exists
 
@@ -27,14 +35,13 @@ The hping.org domain registry changed  and no longer hosts the project. here are
 
 ### Notes
 
--  TCL scripting is enabled 
+-  TCL scripting is enabled  : `-DUSE_TCL` and `-ltcl`
 
-  - homebrew-core built hping3 with --no-tcl. But macOS comes with Tcl 8.5 (install CommandLineTools just in case)   
-  TCL scripting is enabled here with `-DUSE_TCL` and `-ltcl`, because hping's 2005 configure only looked for tclsh8.* and libtcl*.so 
+- homebrew-core built hping3 with `--no-tcl`
+  although the new OS includes Tcl 8.5, `hping` (from 2005) only searched for `tclsh8.*` and `libtcl*.so`, so install the Command Line Tools just in case.
 
+  https://developer.apple.com/documentation/xcode/installing-the-command-line-tools/
 - most operations need raw sockets 
-
-- Usage examples: [cellularmitosis's gist](https://gist.github.com/cellularmitosis/a18fc81b74a7365c5162ea6493c89640).    
 
 
 
