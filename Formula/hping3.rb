@@ -11,18 +11,16 @@ class Hping3 < Formula
     skip "no upstream releases since 2014"
   end
 
+  depends_on :macos
+
   uses_from_macos "libpcap"
 
   def install
-    inreplace "libpcap_stuff.c", "net/bpf.h", "pcap/bpf.h" unless OS.mac?
-
     system "./configure", "--no-tcl"
 
-    if OS.mac?
-      inreplace "Makefile" do |s|
-        s.gsub! "CCOPT= -O2 -Wall", "CCOPT= -O2 -Wall -DUSE_TCL"
-        s.gsub! "$(PCAP)", "$(PCAP) -ltcl"
-      end
+    inreplace "Makefile" do |s|
+      s.gsub! "CCOPT= -O2 -Wall", "CCOPT= -O2 -Wall -DUSE_TCL"
+      s.gsub! "$(PCAP)", "$(PCAP) -ltcl"
     end
 
     system "make"
@@ -47,11 +45,9 @@ class Hping3 < Formula
   test do
     output = shell_output("#{sbin}/hping3 -v")
     assert_match "hping version", output
+    assert_match "TCL scripting capable", output
 
-    if OS.mac?
-      assert_match "TCL scripting capable", output
-      assert_equal "127.0.0.1",
-                   pipe_output("#{sbin}/hping3 exec", "puts [hping resolve localhost]").strip
-    end
+    assert_equal "127.0.0.1",
+                 pipe_output("#{sbin}/hping3 exec", "puts [hping resolve localhost]").strip
   end
 end
