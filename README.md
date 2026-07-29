@@ -1,4 +1,5 @@
 #  Hping3 for MacOS / homebrew-tap
+[![tests](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml/badge.svg)](https://github.com/parsa222/homebrew-tap/actions/workflows/test.yml)  
 
 Homebrew formulae maintained by [@parsa222](https://github.com/parsa222).
 
