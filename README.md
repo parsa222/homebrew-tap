@@ -26,12 +26,19 @@ The hping.org domain registry changed  and no longer hosts the project. here are
 
 ### Notes
 
-Most operations need raw sockets.
+-  TCL scripting is enabled 
 
-Usage examples: [cellularmitosis's gist](https://gist.github.com/cellularmitosis/a18fc81b74a7365c5162ea6493c89640)
+  - homebrew-core built hping3 with --no-tcl. But macOS ships Tcl 8.5 in CommandLineTools.  
+  its is enabled here with `-DUSE_TCL` and `-ltcl`, because hping's 2005 configure only looked for tclsh8.* and libtcl*.so 
 
-hping is GPL-2.0-only, Copyright (C) 1998, 1999 Salvatore Sanfilippo. This tap adds
-packaging only. All credit for hping belongs to [@antirez](https://github.com/antirez).
+- most operations need raw sockets.
+
+- Usage examples: [cellularmitosis's gist](https://gist.github.com/cellularmitosis/a18fc81b74a7365c5162ea6493c89640).    
+
+
+
+<br>  **hping is GPL-2.0-only, Copyright (C) 1998, 1999 Salvatore Sanfilippo. this tap adds
+packaging only, All credit for hping belongs to [@antirez](https://github.com/antirez).**
 
 ---
 
